@@ -100,7 +100,8 @@ function PDRequest(token, endpoint, method, options) {
 		url: "https://api.pagerduty.com/" + endpoint,
 		headers: {
 			"Authorization": "Token token=b7THe3Jnj9Gt8bP8ZRuR",
-			"Accept": "application/vnd.pagerduty+json;version=2"
+			"Accept": "application/vnd.pagerduty+json;version=2",
+			"x-routing-key": "R019O3KQPYNL000CTTD4TQVV61TFYLXU"
 		},
 		error: function(err) {
 			$('.busy').hide();
