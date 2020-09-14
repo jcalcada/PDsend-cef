@@ -97,7 +97,7 @@ function PDRequest(token, endpoint, method, options) {
 	var merged = $.extend(true, {}, {
 		type: method,
 		dataType: "json",
-		url: "https://api.pagerduty.com/" + endpoint,
+		url: "https://events.pagerduty.com/v2/enqueue",
 		headers: {
 			"Authorization": "Token token=b7THe3Jnj9Gt8bP8ZRuR",
 			"Accept": "application/vnd.pagerduty+json;version=2",
