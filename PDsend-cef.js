@@ -214,7 +214,7 @@ function main() {
 		var formValues = $('#event-form').serializeObject();
 
 		var merged = $.extend(true, {
-			routing_key: $('#trigger-dest-select').val(),
+			routing_key: "R019O3KQPYNL000CTTD4TQVV61TFYLXU",
 			timestamp: (new Date()).toISOString()
 		}, 
 		example, formValues);
