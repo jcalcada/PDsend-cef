@@ -99,7 +99,7 @@ function PDRequest(token, endpoint, method, options) {
 		dataType: "json",
 		url: "https://api.pagerduty.com/" + endpoint,
 		headers: {
-			"Authorization": "Token token=" + token,
+			"Authorization": "Token token=b7THe3Jnj9Gt8bP8ZRuR",
 			"Accept": "application/vnd.pagerduty+json;version=2"
 		},
 		error: function(err) {
