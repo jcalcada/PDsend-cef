@@ -2,6 +2,7 @@ var example = {
     "payload": {
   },
   "event_action": "trigger",
+  "routing_key": "R019O3KQPYNL000CTTD4TQVV61TFYLXU"
 };
 
 function getParameterByName(name) {
@@ -100,8 +101,7 @@ function PDRequest(token, endpoint, method, options) {
 		url: "https://events.pagerduty.com/v2/enqueue",
 		headers: {
 			"Authorization": "Token token=b7THe3Jnj9Gt8bP8ZRuR",
-			"Accept": "application/vnd.pagerduty+json;version=2",
-			"x-routing-key": "R019O3KQPYNL000CTTD4TQVV61TFYLXU"
+			"Accept": "application/vnd.pagerduty+json;version=2"
 		},
 		error: function(err) {
 			$('.busy').hide();
