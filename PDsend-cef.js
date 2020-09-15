@@ -2,7 +2,6 @@ var example = {
     "payload": {
   },
   "event_action": "trigger",
-  "source":"git",
   "routing_key": "R019O3KQPYNL000CTTD4TQVV61TFYLXU"
 };
 
@@ -216,7 +215,8 @@ function main() {
 
 		var merged = $.extend(true, {
 			routing_key: "R019O3KQPYNL000CTTD4TQVV61TFYLXU",
-			timestamp: (new Date()).toISOString()
+			timestamp: (new Date()).toISOString(),
+			source: "git"
 		}, 
 		example, formValues);
 		removeEmpty(merged);
