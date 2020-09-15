@@ -2,7 +2,6 @@ var example = {
     "payload": {
   },
   "event_action": "trigger",
-  "routing_key": "R019O3KQPYNL000CTTD4TQVV61TFYLXU"
 };
 
 function getParameterByName(name) {
@@ -98,9 +97,9 @@ function PDRequest(token, endpoint, method, options) {
 	var merged = $.extend(true, {}, {
 		type: method,
 		dataType: "json",
-		url: "https://events.pagerduty.com/v2/enqueue",
+		url: "https://api.pagerduty.com/" + endpoint,
 		headers: {
-			"Authorization": "Token token=b7THe3Jnj9Gt8bP8ZRuR",
+			"Authorization": "Token token=" + token,
 			"Accept": "application/vnd.pagerduty+json;version=2"
 		},
 		error: function(err) {
@@ -131,7 +130,7 @@ function PDCEFEvent(options) {
 		headers: {
 			"Accept": "application/vnd.pagerduty+json;version=2.0"
 		},
-		url: "https://events.pagerduty.com/v2/enqueue"
+		url: "https://events.pagerduty.com/enqueue"
 
 	},
 	options);
@@ -214,9 +213,8 @@ function main() {
 		var formValues = $('#event-form').serializeObject();
 
 		var merged = $.extend(true, {
-			routing_key: "R019O3KQPYNL000CTTD4TQVV61TFYLXU",
-			timestamp: (new Date()).toISOString(),
-			source: "git"
+			routing_key: $('#trigger-dest-select').val(),
+			timestamp: (new Date()).toISOString()
 		}, 
 		example, formValues);
 		removeEmpty(merged);
