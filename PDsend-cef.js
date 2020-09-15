@@ -1,4 +1,4 @@
-const ROUTING_KEY = "YOUR_ROUTING_KEY_HERE";
+const ROUTING_KEY = "R019O3KQPYNL000CTTD4TQVV61TFYLXU";
 
 var example = {
     "payload": {
