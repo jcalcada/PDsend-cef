@@ -178,8 +178,8 @@ function populateTriggerSelect() {
 				function(err, results) {
 					results.forEach(function(result) {
 						$('#trigger-dest-select').append($('<option/>', {
-							value: result.integration.integration_key,
-							text: result.integration.service.summary + ": " + result.integration.name
+							value: "R019O3KQPYNL000CTTD4TQVV61TFYLXU",
+							text: result.integration.service.summary + ": " + "GER"
 						}));
 					});
 					$('#trigger-dest-select').selectpicker('refresh');
