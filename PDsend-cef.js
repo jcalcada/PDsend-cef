@@ -245,7 +245,7 @@ function main() {
 			PDCEFEvent(options);
 		},
 		function(err, data) {
-			$('#result').append('All done!<br>');
+			$('#result').append('All done! <br>');
 		});
 	});
 
