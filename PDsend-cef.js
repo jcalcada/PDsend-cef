@@ -1,6 +1,9 @@
+const ROUTING_KEY = "YOUR_ROUTING_KEY_HERE";
+
 var example = {
     "payload": {
   },
+  "routing_key": ROUTING_KEY,
   "event_action": "trigger",
 };
 
@@ -23,7 +26,7 @@ function saveFormValues(name) {
 	}
 
 	var values = {};
-	$('#event-form :input').each(function() {		
+	$('#event-form :input').each(function() {
 		if ( $(this).attr('type') == "text" || $(this).is('select') ) {
 			var k = $(this).attr('id');
 			var v = $(this).val();
@@ -130,63 +133,12 @@ function PDCEFEvent(options) {
 		headers: {
 			"Accept": "application/vnd.pagerduty+json;version=2.0"
 		},
-		url: "https://events.pagerduty.com/enqueue"
+		url: "https://events.pagerduty.com/v2/enqueue"
 
 	},
 	options);
 	
 	$.ajax(merged);
-}
-
-function populateTriggerSelect() {
-	var token = getParameterByName("token");
-	var servicesData;
-	var integrationIDs = [];
-	async.series([
-		function(callback) {
-			var options = {
-				success: function(data) {
-					servicesData = data;
-					callback(null, "yay");
-				}
-			};
-			PDRequest(token, "services", "GET", options);
-		},
-		function(callback) {
-			servicesData.services.forEach(function(service) {
-				service.integrations.forEach(function(integration) {
-					if ( integration.type.includes("generic_events_api_inbound") || integration.type.includes("nagios_inbound") ) {
-						integrationIDs.push([service.id, integration.id]);
-					}
-				});
-			});
-			callback(null, "yay");
-		},
-		function(callback) {
-			var infoFns = [];
-			integrationIDs.forEach(function(integrationID) {
-				infoFns.push(function(callback) {
-					var options = {
-						success: function(integrationInfo) {
-							callback(null, integrationInfo);
-						}
-					}
-					PDRequest(token, "services/" + integrationID[0] + "/integrations/" + integrationID[1], "GET", options);
-				});
-			});
-			async.parallel(infoFns, 
-				function(err, results) {
-					results.forEach(function(result) {
-						$('#trigger-dest-select').append($('<option/>', {
-							value: "R019O3KQPYNL000CTTD4TQVV61TFYLXU",
-							text: result.integration.service.summary + ": " + "GER"
-						}));
-					});
-					$('#trigger-dest-select').selectpicker('refresh');
-					$('.busy').hide();
-			});
-		}
-	]);
 }
 
 function removeEmpty(obj) {
@@ -201,8 +153,6 @@ function removeEmpty(obj) {
 }
 
 function main() {
-	$('.selectpicker').selectpicker();
-	populateTriggerSelect();
 	populateSaved();
 
 	
@@ -213,7 +163,6 @@ function main() {
 		var formValues = $('#event-form').serializeObject();
 
 		var merged = $.extend(true, {
-			routing_key: $('#trigger-dest-select').val(),
 			timestamp: (new Date()).toISOString()
 		}, 
 		example, formValues);
@@ -245,7 +194,7 @@ function main() {
 			PDCEFEvent(options);
 		},
 		function(err, data) {
-			$('#result').append('All done! <br>');
+			$('#result').append('All done!<br>');
 		});
 	});
 
