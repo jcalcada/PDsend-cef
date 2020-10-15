@@ -176,7 +176,8 @@ function main() {
 			delete merged.images;
 		}
 
-		var n = parseInt($('#times').val());
+	// var n = parseInt($('#times').val());
+		var n = 1;
 
 		async.times(n, function(n, next) {
 			$('#result').append('Sending event number ' + n + '<br>\n');
