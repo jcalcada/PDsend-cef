@@ -131,7 +131,8 @@ function PDCEFEvent(options) {
 		type: "POST",
 		dataType: "json",
 		headers: {
-			"Accept": "application/vnd.pagerduty+json;version=2.0"
+			"Accept": "application/vnd.pagerduty+json;version=2.0",
+			"Access-Control-Allow-Origin": "Null"
 		},
 		url: "https://events.pagerduty.com/v2/R019O3KQPYNL000CTTD4TQVV61TFYLXU/enqueue"
 
