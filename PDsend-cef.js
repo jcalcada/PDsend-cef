@@ -1,9 +1,9 @@
-const ROUTING_KEY = "xxx";
+
 
 var example = {
     "payload": {
   },
-  "routing_key": ROUTING_KEY,
+  "routing_key": "myrout",
   "event_action": "trigger",
 };
 
