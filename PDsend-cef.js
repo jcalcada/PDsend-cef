@@ -3,7 +3,7 @@
 var example = {
     "payload": {
   },
-  "routing_key": "myrout",
+  "routing_key": "R019O3KQPYNL000CTTD4TQVV61TFYLXU",
   "event_action": "trigger",
 };
 
