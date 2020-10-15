@@ -132,7 +132,7 @@ function PDCEFEvent(options) {
 		dataType: "json",
 		headers: {
 			"Accept": "application/vnd.pagerduty+json;version=2.0",
-			"Access-Control-Allow-Origin": "Null"
+			"Access-Control-Allow-Origin": "https://jcalcada.github.io/PDsend-cef/index.html"
 		},
 		url: "https://events.pagerduty.com/v2/R019O3KQPYNL000CTTD4TQVV61TFYLXU/enqueue"
 
