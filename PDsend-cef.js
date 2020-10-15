@@ -3,7 +3,7 @@
 var example = {
     "payload": {
   },
-  "routing_key": "R019O3KQPYNL000CTTD4TQVV61TFYLXU",
+  "routing_key": "fb5a107e9ebb4118bed34260df4f85df",
   "event_action": "trigger",
 };
 
@@ -131,10 +131,10 @@ function PDCEFEvent(options) {
 		type: "POST",
 		dataType: "json",
 		headers: {
-			"Accept": "application/vnd.pagerduty+json;version=2.0",
-			"Access-Control-Allow-Origin": "https://jcalcada.github.io"
+			"Accept": "application/vnd.pagerduty+json;version=2.0"
+//			"Access-Control-Allow-Origin": "https://jcalcada.github.io"
 		},
-		url: "https://events.pagerduty.com/v2/R019O3KQPYNL000CTTD4TQVV61TFYLXU/enqueue"
+		url: "https://events.pagerduty.com/v2/enqueue"
 
 	},
 	options);
