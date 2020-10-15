@@ -1,4 +1,4 @@
-const ROUTING_KEY = "d2db566a3588436ebd3473b0b580b8b9";
+const ROUTING_KEY = "xxx";
 
 var example = {
     "payload": {
@@ -133,7 +133,7 @@ function PDCEFEvent(options) {
 		headers: {
 			"Accept": "application/vnd.pagerduty+json;version=2.0"
 		},
-		url: "https://events.pagerduty.com/v2/d2db566a3588436ebd3473b0b580b8b9/enqueue"
+		url: "https://events.pagerduty.com/v2/R019O3KQPYNL000CTTD4TQVV61TFYLXU/enqueue"
 
 	},
 	options);
