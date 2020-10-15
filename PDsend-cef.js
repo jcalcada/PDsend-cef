@@ -102,7 +102,7 @@ function PDRequest(token, endpoint, method, options) {
 		dataType: "json",
 		url: "https://api.pagerduty.com/" + endpoint,
 		headers: {
-			"Authorization": "Token token=b7THe3Jnj9Gt8bP8ZRuR",
+			"Authorization": "Token token=" + token,
 			"Accept": "application/vnd.pagerduty+json;version=2"
 		},
 		error: function(err) {
@@ -193,7 +193,7 @@ function main() {
 			PDCEFEvent(options);
 		},
 		function(err, data) {
-			$('#result').append('All done!<br>');
+			$('#result').append('done. <br>');
 		});
 	});
 
